@@ -1,0 +1,22 @@
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+.DS_Store
+local-db.sqlite
+
+.coverage
+*flymake*
+*#*
+.*#*
+*.#*
+.*.#*
+docs/source_build/*
+_public/
+conaudio/static/vendor
+conaudio/static/.webassets-cache
+conaudio/static/assets.manifest
+conaudio/static/build/
+makedb.log
