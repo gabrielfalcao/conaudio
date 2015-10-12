@@ -2,7 +2,7 @@ all: test
 
 export SQLALCHEMY_DATABASE_URI:=mysql://root@localhost/conaudio_db_local
 
-test: unit functional
+test: prepare web
 
 prepare:
 	@pip install -U pip
@@ -11,6 +11,9 @@ prepare:
 
 clean:
 	@git clean -Xdf # removing files that match patterns inside .gitignore
+
+web:
+	npm run build
 
 run:
 	tumbler run
