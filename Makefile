@@ -5,30 +5,15 @@ export SQLALCHEMY_DATABASE_URI:=mysql://root@localhost/conaudio_db_local
 test: unit functional
 
 prepare:
-	@pip install -q curdling
-	@curd install -r development.txt
+	@pip install -U pip
+	@pip install -r development.txt
+	@npm install
 
 clean:
 	@git clean -Xdf # removing files that match patterns inside .gitignore
 
-unit:
-	@python manage.py unit
-
-functional: db
-	@python manage.py functional
-
-acceptance:
-	@python manage.py acceptance
-
-shell:
-	python manage.py shell
-
 run:
-	python manage.py run
-
-check:
-	python manage.py check
-
+	tumbler run
 
 migrate-forward:
 	@[ "$(reset)" == "yes" ] && echo "drop database if exists conaudio_db_local;create database conaudio_db_local" | mysql -uroot || echo "Running new migrations..."

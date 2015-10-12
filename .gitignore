@@ -19,4 +19,7 @@ conaudio/static/vendor
 conaudio/static/.webassets-cache
 conaudio/static/assets.manifest
 conaudio/static/build/
+build
+node_modules
+npm.log
 makedb.log
